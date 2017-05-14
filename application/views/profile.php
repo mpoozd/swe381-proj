@@ -3,11 +3,10 @@
 	    <?php include 'header.php'; ?>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="messages.js" charset="utf-8"></script>
   </head>
-  <body>
 
 
 
@@ -15,27 +14,24 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
 <div class="row">
-    <div class="col-sm-3">
+  <div class="col-sm-3">
         
         <ul class="nav nav-pills nav-stacked nav-email shadow mb-20">
             <li class="active">
-                <a href="/requests">
-                    <i class="fa fa-inbox"></i> Inbox  <span class="label pull-right">7</span>
+                <a href="/posts">
+                    <i class="fa fa-inbox"></i> Posts  <span class="label pull-right"> <?echo $posts->num_rows() ?> </span>
                 </a>
             </li>
             <li>
-                <a href="#mail-compose.html"><i class="fa fa-envelope-o"></i> Send friend request</a>
-            </li>
-            <li>
-                <a href="#mail-compose.html"><i class="glyphicon glyphicon-pencil"></i>Edit profile</a>
+                <a href="/requests"><i class="fa fa-envelope-o"></i>Friend requests</a>
             </li>
             
             
             
-        </ul><!-- /.nav -->
+        </ul> 
 
        
-    </div>
+    </div> <!-- /.nav -->
     <div class="col-sm-9">
         
         <!-- resumt -->

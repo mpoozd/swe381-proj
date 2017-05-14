@@ -4,10 +4,10 @@
   <head>
 	  
     <meta charset="utf-8">
-    <title></title>
+    <title>Request</title>
+
   </head>
   <body>
-
   <div class="container">
 	<div class="row">
 
@@ -19,6 +19,10 @@
 						<div class="pull-right">
 							
 						</div>
+					<?php
+							if($requests->num_rows() > 0){
+							foreach($requests->result_array() as $requests_row){
+				   ?>
 						<div class="table-container">
 							<table class="table table-filter">
 								<tbody>
@@ -29,12 +33,12 @@
 													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
 												</a>
 												<div class="media-body">
-													<span class="media-meta pull-right"><a  class="btn btn-success" href="<?echo base_url().'/requests/status/1'; ?>" >accept</a></span>
+													<span class="media-meta pull-right"><a  class="btn btn-success" href="<?echo base_url().'/requests/status/2'; ?>" >accept</a></span>
 													<h4 class="title">
-														Lorem Impsum
-														<span class="pull-right pagado"><a  class="btn btn-danger" href="<?echo base_url().'/requests/status/0'; ?>" >Deny</a></span>
+														username
+														<span class="pull-right pagado"><a  class="btn btn-danger" href="<?echo base_url().'/requests/status/1'; ?>" >Deny</a></span>
 													</h4>
-													<p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
+													<p class="summary">...</p>
 												</div>
 											</div>
 										</td>
@@ -42,6 +46,11 @@
 								</tbody>
 							</table>
 						</div>
+						<? } } else { ?>
+						       <div class="alert alert-info">
+  <strong>info:</strong> you do not have any requests yet.
+        </div>
+        <? } ?>
 					</div>
 				</div>
 				

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
-	    <?php include 'header.php'; ?>
+	   <!-- ?php include 'header.php'; ?--> 
   <head>
     <meta charset="utf-8">
     <title>sign in</title>
+    <link href="<?base_url()?>/assets/css/sign.css"  rel="stylesheet">
   </head>  
-<body>
+
 
 
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h1 class="text-center login-title">Sign in</h1>
+        <div class="col-sm-6 col-md-4 col-md-offset-4 loginform">
             <div class="account-wall">
  <?php if($this->session->flashdata('success_message') != ""){ ?>
 <div class="update-nag">
@@ -29,24 +29,27 @@
 <?php	$this->session->flashdata("error_message " , ""); } ?>
 
 
-        <form id="loginform" class="form-horizontal" method="post" enctype="multipart/form-data" action="login/login" >
-                    <fieldset>
-			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="Email" name="email" type="text">
-			    		</div>
-			    		<div class="form-group">
-			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
-			    		</div>
-			    		<div class="checkbox">
-			    	    	<label>
-			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
-			    	    	</label>
-			    	    </div>
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-			    	</fieldset>
-			      	</form>
-            </div>
-            <a href="/signup" class="text-center new-account">Create an account </a>
+                <div class="form">
+<div class="header"><h2>Sign In</h2></div>
+<div class="login">
+<form id="loginform" method="post" enctype="multipart/form-data" action="login/login">
+<ul>
+<li>
+<span class="un"><i class="fa fa-user"></i></span><input type="email" required="" name="email" class="text" placeholder="User Name Or Email"></li>
+<li>
+<span class="un"><i class="fa fa-lock"></i></span><input type="password" required="" name="password" class="text" placeholder="User Password"></li>
+<li>
+<input type="submit" value="LOGIN" class="btn">
+</li>
+<li><div class="span"><span class="ch"><input type="checkbox" id="r"> <label for="r">Remember Me</label> </span> <span class="ch"><a href="#">Forgot Password?</a></span></div></li>
+</ul>
+</form>
+</div><br>
+<div class="sign">
+<div class="need">Need new account ?</div>
+<div class="up"><a href="">Sign Up</a></div>
+</div>
+</div>
         </div>
     </div>
 </div>
@@ -54,7 +57,11 @@
 </body>
 </html>
 
-
+<style>
+.loginform {
+	    margin-top: 137px;
+}
+</style>
 <script>
   
   

@@ -1,5 +1,6 @@
 
 <head>
+    <title>Post</title>
   <?php include 'header.php'; ?>
 	<title></title>
   <meta charset="UTF-8">
@@ -17,7 +18,7 @@
   <blockquote contenteditable="true">
                 <img src="http://placehold.it/260x180" alt="">
 	  <p> "<?=$posts_row['post_text']?>" </p>
-	  <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+	  <small>Enter your comments <cite title="Source Title">here</cite></small>
     </blockquote>
     
 </div>

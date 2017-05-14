@@ -12,6 +12,20 @@
 				return $this->db->get();
 			}
 			
+			function select_like($select , $table , $q)
+			{
+				$this->db->select( $select );
+				$this->db->from( $table );
+				$this->db->like('user_name', $q );
+				$this->db->or_like('user_email', $q );
+				$query = $this->db->get();
+				$result = $query->result();
+				if($query->num_rows() == 0)
+				return false;
+				else
+				return $query;
+			}
+			
 			function update_where($where,$table,$data)
 			{
 					$this->db->where( $where );

@@ -11,6 +11,14 @@
         
     <script src="<?base_url()?>/assets/js.js" ></script>
 </head>
+<script> 
+
+function search_user(){
+  var val = document.getElementById('search').value;
+  if(val != '')
+  window.location.href = "/search/search/" + val;
+}
+</script>
 <body>
 
 <nav class="navbar navbar-default" >
@@ -31,27 +39,39 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/home">Home</a></li>
           <li><a href="/profile">Profile</a></li>
-          <li><a href="/requests">Messages</a></li>
-          
+          <li><a href="/requests">Friend Requests</a></li>
+          <li><a href="/posts">Posts</a></li>
             </ul>
           </li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" id="search" class="form-control" placeholder="Search">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="button" onclick="search_user()" class="btn btn-default">Submit</button>
         </form>
+        
+    
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/signup">Sign up</a></li>
-          <li><a href="/login">Sign in</a></li>
-
+          
+    <!--       <li id="signupLI"><a href="/signup">Sign up</a></li>
+              
+        -->
+          <li id="signinLI"><a href="/login">Logout</a></li> 
+          
             </ul>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-
+<script>
+  function hideWhenLogin(){
+    if()
+    
+    
+  }
+  </script>
 </body>
+
 </html>

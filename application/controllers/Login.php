@@ -45,7 +45,7 @@ public function login (){
 					
 					$this->session->set_userdata("login_session" , $session_id);
 										
-					redirect('profile' , 'refresh');
+					redirect('home' , 'refresh');
 										
 
 				} else {

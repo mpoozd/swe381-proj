@@ -12,6 +12,12 @@
 
 
     <div class="container">
+        
+         <?php
+          if(isset($search) && $search->num_rows() > 0){
+							foreach($search->result_array() as $search_row){
+				   ?>
+        
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="well well-sm">
@@ -21,18 +27,17 @@
                         </div>
                         <div class="col-sm-6 col-md-8">
                             <h4>
-                                Bhaumik Patel</h4>
-                            <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
+                                <? echo $search_row['user_name'] ?>   </h4>
+                            <small><cite title="San Francisco, USA"> <? echo $search_row['workplace']; ?> <i class="glyphicon glyphicon-map-marker">
                             </i></cite></small>
                             <p>
-                                <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                                <i class="glyphicon glyphicon-envelope"> </i><? echo $search_row['user_email']; ?>                                <br />
+                                <i class="glyphicon glyphicon-globe"><? echo $search_row['gender']; ?>     </i>
                                 <br />
-                                <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
-                                <br />
-                                <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+                                <i class="glyphicon glyphicon-gift">  </i><? echo $search_row['age']; ?>    </p>
                             <!-- Split button -->
                             <div class="btn-group">
-                                <button type="button" class="btn btn-primary">Send friend request</button>
+                                <a  class="btn btn-primary" href="<?echo base_url().'/search/send_invite/'. $this->session->userdata('user_id') .'/'. $search_row['user_id']; ?>">Send friend request</a>
 
 
                             </div>
@@ -41,6 +46,12 @@
                 </div>
             </div>
         </div>
+        <? }}
+        else { ?>
+       <div class="alert alert-warning">
+  <strong>oops!</strong> result no found or try to search again.
+        </div>
+        <? } ?>
     </div>
 
 
