@@ -25,23 +25,7 @@
 
 <?php	} } ?>
 
-<div class="col-xs-9 col-md-9 section-box">
-                        <h2>
-                            Bootsnipp <a href="http://bootsnipp.com/" target="_blank"><span class="glyphicon glyphicon-new-window">
-                            </span></a>
-                        </h2>
-                        <p>
-                            Design elements, playground and code snippets for Bootstrap HTML/CSS/JS framework</p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span>(36)<span class="separator">|</span>
-                                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                            </div>
-                        </div>
-                    </div>
+
 					
                 <form id="postform" class="form-signin"  method="post" enctype="multipart/form-data" action=""  >
                 <input id="post_text" "name="post_text" type="text" class="form-control" placeholder="post" required autofocus>

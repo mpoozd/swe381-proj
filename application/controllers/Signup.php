@@ -34,7 +34,29 @@ class Signup extends CI_Controller {
 	public function register(){
 				
 
+						if ($_FILES['user_avatar']['name'] != '') {
+
+					
+                    $fname = time() . '_' . basename($_FILES['user_avatar']['name']);
+                    $fname = str_replace(" ", "_", $fname);
+                    $fname = str_replace("%", "_", $fname);
+                    $name_ext = end(explode(".", basename($_FILES['user_avatar']['name'])));
+                    $name = str_replace('.' . $name_ext, '', basename($_FILES['user_avatar']['name']));
+                    $uploaddir = PATH_DIR . "uploads/";
+                    $uploadfile = $uploaddir . $fname;
 				
+				$allowedExtsImage = array("gif", "jfif", "jpe", "jpeg", "jpg", "png","GIF","JPEG","JPG","PNG" ,"JPE" , "JFIF");
+				$extension = end(explode(".", $fname));
+				
+					if(in_array($extension, $allowedExtsImage)){
+						if (move_uploaded_file($_FILES['user_avatar']['tmp_name'], $uploadfile)) {
+							$source_image_path = PATH_DIR . 'uploads/';
+							$source_image_name = $fname;
+							
+							$insert['profilephoto'] = $fname;
+												}
+					}
+                }
 				
 		$email = $this->input->post("email");
 		$is_regisered = $this->model->select_where("user_email" , "users" , array("user_email" => $email ));
@@ -52,6 +74,8 @@ class Signup extends CI_Controller {
 				$insert['gender'] = $this->input->post("gender");
 				
 				$insert['workplace'] = $this->input->post("workplace");
+				
+
 
 				$this->model->insert_array('users' , $insert);
 			

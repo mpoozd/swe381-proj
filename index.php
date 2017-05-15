@@ -217,6 +217,8 @@ switch (ENVIRONMENT)
 		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
 		exit(3); // EXIT_CONFIG
 	}
+	
+	
 
 /*
  * -------------------------------------------------------------------
@@ -304,6 +306,8 @@ switch (ENVIRONMENT)
 	}
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+	define("PATH_DIR", str_replace("\\","/",realpath(dirname(__FILE__))).'/');	
 
 /*
  * --------------------------------------------------------------------

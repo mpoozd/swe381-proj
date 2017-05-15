@@ -2,15 +2,14 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
 *{margin:0; padding:0}
 .add1{margin:0 auto; width:720px}
-body{background:#294072; font-family: 'Source Sans Pro', sans-serif}
-.form{width:400px; margin:0 auto; background:#1C2B4A}
-.header{height:44px; background:#17233B}
+body{background: #f7f0f0;font-family: 'Source Sans Pro', sans-serif;}
+.form{width:400px;margin:0 auto;background: #9E9E9E;}
 .header h2{height:44px; line-height:44px; color:#fff; text-align:center}
 .login{padding:0 20px}
 .login span.un{width:10%; text-align:center; color:#0C6; border-radius:3px 0 0 3px}
-.text{background:#12192C; width:90%; border-radius:0 3px 3px 0; border:none; outline:none; color:#999; font-family: 'Source Sans Pro', sans-serif} 
-.text,.login span.un{display:inline-block; vertical-align:top; height:40px; line-height:40px; background:#12192C;}
-.radio{background:#12192C; width:90%; padding: 15px; padding-top: 10px; border-radius:0 3px 3px 0; border:none; outline:none; color:#999; font-family: 'Source Sans Pro', sans-serif} 
+.text{background:#d5e8e6;width:90%;border-radius:0 3px 3px 0;border:none;outline:none;color:#999;font-family: 'Source Sans Pro', sans-serif;} 
+.text,.login span.un{display:inline-block;vertical-align:top;height:40px;line-height:40px;background: #d5e8e6;}
+.radio{background:#d5e8e6; width:90%; padding: 15px; padding-top: 10px; border-radius:0 3px 3px 0; border:none; outline:none; color:#999; font-family: 'Source Sans Pro', sans-serif} 
 .btn{height:40px; border:none; background:#0C6; width:100%; outline:none; font-family: 'Source Sans Pro', sans-serif; font-size:20px; font-weight:bold; color:#eee; border-bottom:solid 3px #093; border-radius:3px; cursor:pointer}
 ul li{height:40px; margin:15px 0; list-style:none}
 .span{display:table; width:100%; font-size:14px;}
@@ -23,10 +22,87 @@ ul li{height:40px; margin:15px 0; list-style:none}
 .social div i.fa{font-size:16px; line-height:30px}
 .fb{background:#3B5A9A; border-bottom:solid 3px #036} .tw{background:#2CA8D2; margin-left:16%; border-bottom:solid 3px #3399CC}
 /*bottom*/
-.sign{width:90%; padding:0 5%; height:50px; display:table; background:#17233B}
+.sign{width:90%;padding:0 5%;height:50px;display:table;background: #6f6e6e;}
 .sign div{display:inline-block; width:50%; line-height:50px; color:#ccc; font-size:14px}
 .up{text-align:right}
 .up a{display:block; background:#096; text-align:center; height:35px; line-height:35px; width:50%; font-size:16px; text-decoration:none; color:#eee; border-bottom:solid 3px #006633; border-radius:3px; font-weight:bold; margin-left:50%}
 @media(max-width:480px){ .form{width:100%}}
 .backto{background:#09C}
 .backto>a{padding:16px; margin-bottom:10px; display:block; text-align:center; text-decoration:none; font-size:16px; color:#fff}
+
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.alert .alert-link {
+  font-weight: bold;
+}
+.alert > p,
+.alert > ul {
+  margin-bottom: 0;
+}
+.alert > p + p {
+  margin-top: 5px;
+}
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 35px;
+}
+.alert-dismissable .close,
+.alert-dismissible .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  color: inherit;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.alert-success hr {
+  border-top-color: #c9e2b3;
+}
+.alert-success .alert-link {
+  color: #2b542c;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
+}
+.alert-info hr {
+  border-top-color: #a6e1ec;
+}
+.alert-info .alert-link {
+  color: #245269;
+}
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+.alert-warning hr {
+  border-top-color: #f7e1b5;
+}
+.alert-warning .alert-link {
+  color: #66512c;
+}
+.alert-danger {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.alert-danger hr {
+  border-top-color: #e4b9c0;
+}
+.alert-danger .alert-link {
+  color: #843534;
+}

@@ -25,6 +25,9 @@ class Posts extends CI_Controller {
 	function new_post(){
 		
 		$post_text 	= $this->input->post("po");
+		$file = $this->input->post("myfile");
+		$this->upload_file();
+		
 		if($post_text != ''){
 		$insert['user_id'] = $this->session->userdata('user_id');
 		$insert['post_text'] = $post_text;
@@ -32,6 +35,35 @@ class Posts extends CI_Controller {
 		$this->model->insert_array('posts' , $insert);
 		}
 	}
+	
+	function upload_file()
+{
+   if ($_FILES['myfile']['name'] != '') {
+
+					
+                    $fname = time() . '_' . basename($_FILES['myfile']['name']);
+                    $fname = str_replace(" ", "_", $fname);
+                    $fname = str_replace("%", "_", $fname);
+                    $name_ext = end((explode(".", basename($_FILES['myfile']['name']))));
+                    $name = str_replace('.' . $name_ext, '', basename($_FILES['myfile']['name']));
+                    $uploaddir = PATH_DIR . "uploads/";
+                    $uploadfile = $uploaddir . $fname;
+				
+				$allowedExtsImage = array("gif", "jfif", "jpe", "jpeg", "jpg", "png","GIF","JPEG","JPG","PNG" ,"JPE" , "JFIF");
+				$extension = end((explode(".", $fname)));
+				
+					if(in_array($extension, $allowedExtsImage)){
+						if (move_uploaded_file($_FILES['myfile']['tmp_name'], $uploadfile)) {
+							$source_image_path = PATH_DIR . 'uploads/';
+							$source_image_name = $fname;
+							
+							$filepath = $fname;
+                                                        return $filepath;
+												}
+					}
+                }
+}
+
 	
 	
 }

@@ -42,10 +42,10 @@ public function login (){
 					$this->session->set_userdata("user_id" , $user[0]->user_id);
 					$this->session->set_userdata("age" , $user[0]->age);					
 					$this->session->set_userdata("user_name" , $user[0]->user_name);					
-					
+					$this->session->set_userdata("avatar" , $user[0]->profilephoto);					
 					$this->session->set_userdata("login_session" , $session_id);
 										
-					redirect('home' , 'refresh');
+					redirect('profile' , 'refresh');
 										
 
 				} else {
@@ -69,7 +69,7 @@ public function login (){
 		
 		$this->session->unset_userdata("login_session");
 
-		redirect(base_url() , 'refresh');
+		redirect(base_url().'/login' , 'refresh');
 
 	}
 	

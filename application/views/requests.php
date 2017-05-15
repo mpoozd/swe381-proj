@@ -33,12 +33,12 @@
 													<img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
 												</a>
 												<div class="media-body">
-													<span class="media-meta pull-right"><a  class="btn btn-success" href="<?echo base_url().'/requests/status/2'; ?>" >accept</a></span>
+													<span class="media-meta pull-right"><a  class="btn btn-success" href="<?echo base_url().'/requests/change_status/'. $requests_row['request_id'] . '/1'; ?>" >accept</a></span>
 													<h4 class="title">
-														username
-														<span class="pull-right pagado"><a  class="btn btn-danger" href="<?echo base_url().'/requests/status/1'; ?>" >Deny</a></span>
+														<? echo $requests_row['user_name'] ?>
+														<span class="pull-right pagado"><a  class="btn btn-danger" href="<?echo base_url().'/requests/change_status/'. $requests_row['request_id']  .'/2'; ?>" >Deny</a></span>
 													</h4>
-													<p class="summary">...</p>
+													<p class="summary"><? echo $requests_row['user_email'] ?></p>
 												</div>
 											</div>
 										</td>

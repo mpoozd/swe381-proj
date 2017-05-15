@@ -5,7 +5,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">    
     <link href="<?base_url()?>/assets/css/home.css"  rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         
@@ -54,24 +54,17 @@ function search_user(){
     
         <ul class="nav navbar-nav navbar-right">
           
-    <!--       <li id="signupLI"><a href="/signup">Sign up</a></li>
-              
-        -->
-          <li id="signinLI"><a href="/login">Logout</a></li> 
-          
+     <?php if($this->session->userdata('user_id') != ""){ ?>
+          <li> <a class="btn btn-default" href="/login/logout">Logout</a></li> 
+          <? } ?>
             </ul>
           </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-<script>
-  function hideWhenLogin(){
-    if()
-    
-    
-  }
-  </script>
+
+
 </body>
 
 </html>

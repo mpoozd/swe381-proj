@@ -8,8 +8,12 @@ class Requests extends CI_Controller {
 	public function index()
 	{
 		varify_user();
-		
-		$requests = $this->model->select_where('*','requests',array('user_id'=>$this->session->userdata("user_id")));
+		$user_id = $this->session->userdata("user_id");
+		$requests = $this->db->query("SELECT DISTINCT requests.user_id , users.user_name , requests.request_id,  users.user_email FROM (`requests`) 
+					JOIN `users` ON `requests`.`firend_id` = `users`.`user_id` 
+					WHERE `requests`.`user_id` = $user_id AND 'status' = 0
+					group by user_id , firend_id" );
+	
 		$res['requests'] = $requests;
 
 				
@@ -18,12 +22,12 @@ class Requests extends CI_Controller {
 	}
 	
 	
-	function change_status($friend_id ="" , $status=""){
+	function change_status($request_id ="" , $status=""){
 		//varify_user();
 				
 		$update['status'] = $status;
 
-		$this->model->update_where(array('friend_id' => $friend_id) , "requests" , $update);
+		$this->model->update_where(array('request_id' =>  $request_id) , "requests" , $update);
 		
 		if($status == 1)
 		$this->session->set_flashdata('success_message', "Friend status has been accepted successfully.");

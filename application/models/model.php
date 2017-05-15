@@ -62,6 +62,17 @@
 	
 		}
 		
+		function getPosts()
+		{
+			$this->db->select('*');
+			$this->db->from('posts');
+			$this->db->join('requests', 'requests.firend_id' , $uid);
+			$this->db->join('users', 'requests.firend_id' , $uid);
+			$this->db->where('requests.firend_id',$uid);
+			$this->db->or_where('requests.user_id',$uid);
+            //$this->db->order_by('c.track_title','asc');         
+            $query = $this->db->get(); 
+		}
 		
 		
 		  function login($user_email, $password) {

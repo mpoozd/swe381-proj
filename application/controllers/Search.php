@@ -24,8 +24,12 @@ class Search extends CI_Controller {
 		$search = $this->model->select_like('*','users' , $q);
 		$res['search'] = $search;
 		
-		if($search == false)
-		echo "not found";
+		if($search == false){
+					$res['search'] = false;
+					$data['content'] = $this->load->view('searchfriend',$res,true);
+					$this->load->view('searchfriend',$data);
+		}
+
 		
 		else{
 		$data['content'] = $this->load->view('searchfriend',$res,true);
